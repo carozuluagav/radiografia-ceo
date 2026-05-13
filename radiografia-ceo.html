@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radiografía CEO en 6 Dimensiones — Carolina Zuluaga</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F5F0E8;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:2rem 1rem}
+.card{background:#FFFFFF;border-radius:16px;padding:2rem 1.5rem;max-width:480px;width:100%;margin:0 auto}
+.logo-line{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#8B7355;margin-bottom:8px;text-align:center}
+.hero{text-align:center;margin-bottom:2rem}
+.hero h1{font-size:24px;font-weight:500;color:#1C1C1E;line-height:1.3;margin-bottom:10px}
+.hero p{font-size:14px;color:#6B6B6B;line-height:1.6}
+.info-row{display:flex;align-items:flex-start;gap:10px;background:#F5F0E8;border-radius:10px;padding:0.85rem 1rem;margin-bottom:0.75rem}
+.info-icon{font-size:18px;color:#C8A882;flex-shrink:0;margin-top:1px}
+.info-title{font-size:14px;font-weight:500;color:#1C1C1E;margin-bottom:2px}
+.info-sub{font-size:13px;color:#6B6B6B}
+.btn-main{display:block;width:100%;height:52px;background:#1C1C1E;border:none;border-radius:10px;font-size:15px;font-weight:500;color:#C8A882;cursor:pointer;margin-top:1.5rem;letter-spacing:0.02em}
+.btn-main:hover{background:#333}
+.progress-wrap{margin-bottom:1.5rem}
+.progress-bar{height:4px;background:#F5F0E8;border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:#C8A882;border-radius:2px;transition:width 0.4s ease}
+.step-txt{font-size:12px;color:#8B7355;margin-bottom:8px;font-weight:500}
+.dim-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:#C8A882;margin-bottom:4px}
+.dim-title{font-size:20px;font-weight:500;color:#1C1C1E;margin-bottom:1.5rem}
+.question{background:#F5F0E8;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem}
+.q-text{font-size:14px;color:#1C1C1E;line-height:1.6;margin-bottom:12px}
+.scale{display:flex;gap:6px}
+.scale-btn{flex:1;height:44px;border:1px solid #E0D8CC;border-radius:8px;background:#FFFFFF;font-size:15px;font-weight:500;color:#6B6B6B;cursor:pointer;transition:all 0.15s}
+.scale-btn:hover{background:#E8E2D8}
+.scale-btn.selected{background:#1C1C1E;color:#C8A882;border-color:#1C1C1E}
+.scale-labels{display:flex;justify-content:space-between;margin-top:5px;padding:0 2px}
+.scale-lbl{font-size:10px;color:#8B7355}
+.nav{display:flex;gap:8px;margin-top:1.5rem}
+.btn-back{flex:1;height:48px;border:1px solid #E0D8CC;border-radius:10px;background:transparent;font-size:14px;color:#6B6B6B;cursor:pointer}
+.btn-back:hover{background:#F5F0E8}
+.btn-next{flex:2;height:48px;border:none;border-radius:10px;background:#1C1C1E;color:#C8A882;font-size:14px;font-weight:500;cursor:pointer}
+.btn-next:disabled{background:#E0D8CC;color:#8B7355;cursor:not-allowed}
+.btn-next:not(:disabled):hover{background:#333}
+.result-hero{text-align:center;margin-bottom:1.5rem}
+.result-score{font-size:64px;font-weight:500;color:#1C1C1E;line-height:1}
+.result-max{font-size:16px;color:#8B7355;margin-bottom:10px}
+.result-tag{display:inline-block;background:#1C1C1E;color:#C8A882;font-size:12px;font-weight:500;padding:6px 18px;border-radius:20px;margin-bottom:12px}
+.result-title{font-size:18px;font-weight:500;color:#1C1C1E;margin-bottom:8px;line-height:1.4}
+.result-desc{font-size:14px;color:#6B6B6B;line-height:1.6;margin-bottom:1.5rem}
+.dim-results{display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem}
+.dim-row{background:#F5F0E8;border-radius:10px;padding:0.85rem 1rem}
+.dim-row-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.dim-row-name{font-size:13px;font-weight:500;color:#1C1C1E}
+.dim-row-score{font-size:13px;font-weight:500;color:#8B7355}
+.dim-bar{height:4px;background:#E0D8CC;border-radius:2px;overflow:hidden}
+.dim-bar-fill{height:100%;background:#C8A882;border-radius:2px}
+.cta-box{background:#1C1C1E;border-radius:12px;padding:1.5rem;text-align:center}
+.cta-title{font-size:16px;font-weight:500;color:#FFFFFF;margin-bottom:6px}
+.cta-desc{font-size:13px;color:#888;margin-bottom:1.25rem;line-height:1.5}
+.btn-cta{display:block;width:100%;height:52px;background:#C8A882;border:none;border-radius:10px;font-size:15px;font-weight:500;color:#1C1C1E;cursor:pointer;text-decoration:none;line-height:52px}
+.btn-cta:hover{background:#B8986E}
+.divider{border:none;border-top:1px solid #F0EBE3;margin:1.5rem 0}
+.footer{text-align:center;font-size:12px;color:#8B7355;margin-top:1.5rem}
+</style>
+</head>
+<body>
+<div class="card">
+
+<div id="screen-intro">
+  <div class="hero">
+    <div class="logo-line">Carolina Zuluaga · Mentora CEO</div>
+    <h1>Radiografía CEO<br>en 6 Dimensiones</h1>
+    <p>Descubre en cuál de las 6 dimensiones tu empresa está más débil — y por qué no puedes escalar.</p>
+  </div>
+  <div class="info-row">
+    <div class="info-icon">⏱</div>
+    <div><div class="info-title">2 minutos</div><div class="info-sub">18 preguntas, escala del 1 al 5</div></div>
+  </div>
+  <div class="info-row">
+    <div class="info-icon">📊</div>
+    <div><div class="info-title">Tu mapa de dependencia</div><div class="info-sub">Ves exactamente dónde eres el techo de tu negocio</div></div>
+  </div>
+  <div class="info-row">
+    <div class="info-icon">🔑</div>
+    <div><div class="info-title">Resultado inmediato</div><div class="info-sub">Con recomendación personalizada para tu empresa</div></div>
+  </div>
+  <button class="btn-main" onclick="startQuiz()">Comenzar mi Radiografía</button>
+</div>
+
+<div id="screen-quiz" style="display:none">
+  <div class="progress-wrap">
+    <div class="step-txt" id="step-txt">Dimensión 1 de 6</div>
+    <div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+  </div>
+  <div class="dim-label" id="dim-label"></div>
+  <div class="dim-title" id="dim-title"></div>
+  <div id="questions-container"></div>
+  <div class="nav">
+    <button class="btn-back" id="btn-back" onclick="goBack()">← Atrás</button>
+    <button class="btn-next" id="btn-next" onclick="goNext()" disabled>Continuar →</button>
+  </div>
+</div>
+
+<div id="screen-result" style="display:none">
+  <div class="result-hero">
+    <div class="logo-line" style="margin-bottom:12px">Tu resultado</div>
+    <div class="result-score" id="result-score">0</div>
+    <div class="result-max">/ 90 puntos</div>
+    <div class="result-tag" id="result-tag"></div>
+    <div class="result-title" id="result-title"></div>
+    <div class="result-desc" id="result-desc"></div>
+  </div>
+  <div class="dim-results" id="dim-results"></div>
+  <div class="cta-box">
+    <div class="cta-title">¿Quieres romper ese techo?</div>
+    <div class="cta-desc">Agenda una llamada estratégica gratuita con Carolina y diseñamos juntas tu plan de escalamiento en 16 semanas.</div>
+    <a href="https://wa.me/573135589358?text=Hice%20la%20Radiograf%C3%ADa%20CEO%20y%20quiero%20agendar%20mi%20llamada%20estrat%C3%A9gica" target="_blank" class="btn-cta">Agendar mi llamada estratégica</a>
+  </div>
+  <div class="footer">@carozuluagav · carozuluaga.com</div>
+</div>
+
+</div>
+
+<script>
+const dims=[
+  {label:"Liderazgo",title:"Liderazgo CEO",questions:["Si te vas una semana de vacaciones, ¿el negocio funciona igual sin ti?","¿Tomas decisiones estratégicas con datos y diagnóstico, no con intuición y urgencia?","¿Puedes soltar una tarea operativa sin ansiedad de que salga mal?"]},
+  {label:"Organización",title:"Organización",questions:["¿Tienes un organigrama actualizado con roles y funciones documentadas?","¿Cada persona de tu equipo sabe exactamente qué le corresponde sin preguntarte?","¿Las decisiones operativas se toman sin tu intervención directa?"]},
+  {label:"Procesos",title:"Procesos",questions:["¿Tus procesos de entrega están documentados con estándares de calidad?","¿Si una persona renuncia, otra puede asumir su rol con un documento?","¿Tu negocio entrega calidad consistente sin que tú supervises cada paso?"]},
+  {label:"Equipo",title:"Equipo",questions:["¿Tienes al menos 2 personas ejecutando con autonomía real en roles clave?","¿Tu equipo toma decisiones dentro de su rol sin consultarte cada detalle?","¿Podrías incorporar a alguien nuevo hoy y que opere solo en 2 semanas?"]},
+  {label:"Finanzas",title:"Finanzas",questions:["¿Sabes exactamente cuánto ganas después de todos tus costos?","¿Conoces la rentabilidad real de cada producto o servicio que ofreces?","¿Tomas decisiones de crecimiento basadas en proyecciones financieras reales?"]},
+  {label:"Estrategia comercial",title:"Estrategia comercial",questions:["¿Tienes un plan comercial con acciones semanales definidas?","¿Tus clientes llegan por posicionamiento claro, no solo por tu esfuerzo personal?","¿Tu facturación crece de forma sostenida mes a mes?"]}
+];
+
+let current=0;
+let answers=dims.map(()=>[null,null,null]);
+
+function startQuiz(){
+  document.getElementById('screen-intro').style.display='none';
+  document.getElementById('screen-quiz').style.display='block';
+  renderDim();
+}
+
+function renderDim(){
+  const d=dims[current];
+  document.getElementById('dim-label').textContent=d.label;
+  document.getElementById('dim-title').textContent=d.title;
+  document.getElementById('step-txt').textContent='Dimensión '+(current+1)+' de 6';
+  document.getElementById('progress').style.width=(current/6*100)+'%';
+  document.getElementById('btn-back').style.visibility=current===0?'hidden':'visible';
+  document.getElementById('btn-next').textContent=current===5?'Ver mi resultado →':'Continuar →';
+  const c=document.getElementById('questions-container');
+  c.innerHTML='';
+  d.questions.forEach((q,qi)=>{
+    const val=answers[current][qi];
+    const div=document.createElement('div');
+    div.className='question';
+    div.innerHTML='<div class="q-text">'+(qi+1)+'. '+q+'</div><div class="scale">'+[1,2,3,4,5].map(n=>'<button class="scale-btn'+(val===n?' selected':'')+'" onclick="selectAnswer('+qi+','+n+',this)">'+n+'</button>').join('')+'</div><div class="scale-labels"><span class="scale-lbl">Nunca</span><span class="scale-lbl">Siempre</span></div>';
+    c.appendChild(div);
+  });
+  checkNext();
+}
+
+function selectAnswer(qi,val,btn){
+  answers[current][qi]=val;
+  btn.closest('.scale').querySelectorAll('.scale-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  checkNext();
+}
+
+function checkNext(){
+  document.getElementById('btn-next').disabled=!answers[current].every(a=>a!==null);
+}
+
+function goNext(){
+  if(current<5){current++;renderDim();}
+  else showResult();
+}
+
+function goBack(){
+  if(current>0){current--;renderDim();}
+}
+
+function showResult(){
+  document.getElementById('screen-quiz').style.display='none';
+  document.getElementById('screen-result').style.display='block';
+  const dimScores=answers.map(a=>a.reduce((s,v)=>s+(v||0),0));
+  const total=dimScores.reduce((s,v)=>s+v,0);
+  document.getElementById('result-score').textContent=total;
+  let tag,title,desc;
+  if(total<=35){tag="Autoempleo disfrazado";title="Todo depende de ti. Tú eres el techo.";desc="Tu negocio no funciona sin ti. Si paras un día, todo se cae. El potencial está, pero la estructura no. Este es exactamente el punto de partida del Sistema CEO Estratégica.";}
+  else if(total<=55){tag="Bases con brechas críticas";title="Tienes avances, pero sigues siendo el cuello de botella.";desc="Hay dimensiones que funcionan, pero 2 o 3 te están frenando el crecimiento. Identificarlas y cerrarlas es la diferencia entre seguir igual o duplicar.";}
+  else if(total<=72){tag="Buen camino, falta cerrar";title="Vas bien, pero hay dimensiones que frenan el salto.";desc="Estás más cerca de lo que crees. Cerrar 2 o 3 dimensiones específicas puede desbloquearte un crecimiento significativo en menos de 16 semanas.";}
+  else{tag="Lista para escalar";title="Tu empresa tiene la estructura para crecer agresivamente.";desc="Las bases están. Ahora es momento de activar la estrategia comercial y escalar con intención. Una llamada estratégica puede darte el plan exacto.";}
+  document.getElementById('result-tag').textContent=tag;
+  document.getElementById('result-title').textContent=title;
+  document.getElementById('result-desc').textContent=desc;
+  const c=document.getElementById('dim-results');
+  c.innerHTML='';
+  dims.forEach((d,i)=>{
+    const s=dimScores[i];
+    const div=document.createElement('div');
+    div.className='dim-row';
+    div.innerHTML='<div class="dim-row-top"><span class="dim-row-name">'+d.label+'</span><span class="dim-row-score">'+s+'/15</span></div><div class="dim-bar"><div class="dim-bar-fill" style="width:'+Math.round(s/15*100)+'%"></div></div>';
+    c.appendChild(div);
+  });
+}
+</script>
+</body>
+</html>
